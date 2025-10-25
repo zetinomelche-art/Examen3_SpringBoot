@@ -1,0 +1,82 @@
+# =========================================
+# Git Ignore para proyectos Spring Boot
+# =========================================
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración del IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.sw?
+*.swo
+*.bak
+
+# Configuración específica de Eclipse/STS
+.project
+.classpath
+.settings/
+.sts4-cache/
+
+# Archivos de compilación
+target/
+build/
+out/
+bin/
+
+# Dependencias descargadas
+.gradle/
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+logs/
+*.tmp
+
+# Archivos temporales del sistema operativo
+*.tmp
+*.temp
+*.pid
+*.seed
+*.old
+*.orig
+
+# Archivos de empaquetado
+*.jar
+*.war
+*.ear
+
+# Configuración del entorno
+.env
+application-*.yml
+application-*.yaml
+application-*.properties
+# Puedes permitir solo el "application.properties" base:
+# !src/main/resources/application.properties
+
+# Bases de datos locales / archivos de desarrollo
+*.db
+*.h2.db
+*.mv.db
+
+# Archivos de prueba o caché
+*.class
+*.test
+.cache/
+.coverage/
+
+# Node (si usas front-end con npm o yarn)
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Otros
+*.orig
+rebel.xml
