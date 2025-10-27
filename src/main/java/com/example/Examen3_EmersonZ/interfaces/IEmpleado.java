@@ -23,8 +23,9 @@ public interface IEmpleado extends CrudRepository<Empleado,Integer> {
     List<Map<String, Object>> empleadosPorEstado();
 
     // 4 Promedio de salarios
-    @Query("SELECT AVG(e.salario) FROM Empleado e")
+    @Query("SELECT AVG(e.salario) FROM Empleado e WHERE e.estado = 'Activo'")
     Double promedioSalario();
+
 
     // 5 Antigüedad promedio (en años)
     @Query("SELECT AVG(YEAR(CURRENT_DATE) - YEAR(e.fecha_contratacion)) FROM Empleado e")
