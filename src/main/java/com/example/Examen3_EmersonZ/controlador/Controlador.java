@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 
@@ -70,6 +71,41 @@ public class Controlador {
             return ResponseEntity.notFound().build();//Not found
         }
     }
+
+    //======================Estadisticas
+
+    //Cantidad total de empleados
+    @GetMapping("/estadisticas/total")
+    public long cantidadTotalEmpleados() {
+        return IEmpleadoService.contarEmpleados();
+    }
+
+    //Cantidad de empleados por puesto
+    @GetMapping("/estadisticas/puestos")
+    public List<Map<String, Object>> empleadosPorPuesto() {
+        return IEmpleadoService.empleadosPorPuesto();
+    }
+
+    //Empleados activos/inactivos
+    @GetMapping("/estadisticas/estados")
+    public List<Map<String, Object>> empleadosPorEstado() {
+        return IEmpleadoService.empleadosPorEstado();
+    }
+
+    //Promedio de salario
+    @GetMapping("/estadisticas/salarioPromedio")
+    public double promedioSalario() {
+        return IEmpleadoService.promedioSalario();
+    }
+
+    //Antigüedad promedio
+    @GetMapping("/estadisticas/antiguedadPromedio")
+    public double antiguedadPromedio() {
+        return IEmpleadoService.antiguedadPromedio();
+    }
+
+
+
 
 
 }

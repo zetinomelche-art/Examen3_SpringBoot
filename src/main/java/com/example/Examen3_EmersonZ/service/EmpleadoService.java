@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -39,5 +40,33 @@ public class EmpleadoService implements IEmpleadoService {
     @Override
     public void Eliminar(Empleado empleado) {
         data.delete(empleado);
+    }
+
+    @Override
+    public long contarEmpleados() {
+        return data.contarEmpleados();
+    }
+
+    @Override
+    public List<Map<String, Object>> empleadosPorPuesto() {
+        return data.empleadosPorPuesto();
+    }
+
+
+    @Override
+    public List<Map<String, Object>> empleadosPorEstado() {
+        return data.empleadosPorEstado();
+    }
+
+    @Override
+    public double promedioSalario() {
+        Double promedio = data.promedioSalario();
+        return promedio != null ? promedio : 0.0;
+    }
+
+    @Override
+    public double antiguedadPromedio() {
+        Double promedio = data.antiguedadPromedio();
+        return promedio != null ? promedio : 0.0;
     }
 }
